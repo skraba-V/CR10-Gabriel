@@ -17,16 +17,17 @@ if ($_POST) {
     $publisherdate = $_POST['publisher_date'];
     $availability = $_POST['availability'];
     $shortdescription = $_POST['short_description'];
-    $id = $_POST['library_id'];
+    $id = $_POST['id'];
+    
     
     $uploadError = '';
 
     $photo = file_upload($_FILES['photo']);//filies je onaj koji so dodali u a_create
     if($photo->error===0){
-        ($_POST["photo"]=="acdc.jpg")?: unlink("../pictures/$_POST[photo]");           
+        ($_POST["photo"]=="acdc.jpg")?: unlink("./pictures/$_POST[photo]");           
         $sql = "UPDATE Library SET title = '$title', photo = '$photo->fileName', isbnean = $isbn, type = '$type', autor_first_name = '$firstname', autor_last_name = '$lastname', publisher_name = '$publishername', publisher_addres = '$publisheraddres', publisher_date = $publisherdate, availability = '$availability', short_description = '$shortdescription'  WHERE library_id = {$id}";
     }else{
-        $sql = "UPDATE Library SET title = '$title, isbnean = $isbn, type = '$type', autor_first_name = '$firstname', autor_last_name = '$lastname', publisher_name = '$publishername', publisher_addres = '$publisheraddres', publisher_date = $publisherdate, availability = '$availability', short_description = '$shortdescription' WHERE library_id = {$id}";
+        $sql = "UPDATE Library SET title = '$title', isbnean = $isbn, type = '$type', autor_first_name = '$firstname', autor_last_name = '$lastname', publisher_name = '$publishername', publisher_addres = '$publisheraddres', publisher_date = $publisherdate, availability = '$availability', short_description = '$shortdescription' WHERE library_id = {$id}";
     }    
     if (mysqli_query($connect, $sql) === TRUE) {
         $class = "success";
