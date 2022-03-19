@@ -9,6 +9,7 @@ if ($_GET['id']) {
     if (mysqli_num_rows($result) == 1) {
         $data = mysqli_fetch_assoc($result);
         $title = $data['title'];
+        $photo = $data['photo'];
         $isbn = $data['isbnean'];
         $type= $data['type'];
         $firstname = $data['autor_first_name'];
@@ -18,7 +19,6 @@ if ($_GET['id']) {
         $publisherdate = $data['publisher_date'];
         $availability = $data['availability'];
         $shortdescription = $data['short_description'];
-        $photo = $data['photo'];
     } else {
         header("location: error.php");
     }
@@ -106,7 +106,7 @@ if ($_GET['id']) {
                                 <td><input class='form-control' type="file" name="photo"  /></td>
                             </tr>
                     <tr>
-                        <input type= "hidden" name= "library_id" value= "<?php echo $data['library_id'] ?>" /> <!-- ovo je iz sql-->
+                        <input type= "hidden" name= "id" value= "<?php echo $data['library_id'] ?>" /> <!-- ovo je iz sql-->
                         <input type= "hidden" name= "photo" value= "<?php echo $data['photo'] ?>" />
                         <td><button class="btn btn-success" type= "submit">Save Changes</button></td>
                         <td><a href= "index.php"><button class="btn btn-warning" type="button">Back</button></a></td>
