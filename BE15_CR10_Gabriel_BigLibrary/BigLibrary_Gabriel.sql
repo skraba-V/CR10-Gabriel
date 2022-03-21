@@ -41,7 +41,7 @@ CREATE TABLE `Library` (
   `publisher_addres` varchar(30) NOT NULL,
   `publisher_date` int(11) NOT NULL,
   `availability` varchar(30) NOT NULL,
-  `short_description` varchar(900) NOT NULL
+  `short_description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
