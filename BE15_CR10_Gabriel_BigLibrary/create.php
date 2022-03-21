@@ -56,7 +56,7 @@
                             </tr>      
                             <tr>
                                 <th>Publisher date</th>
-                                <td><input class='form-control' type="number" name="publisher_date" placeholder="Publisher Date" /></td>
+                                <td><input class='form-control' type="number" name="publisher_date" placeholder="Publisher Date" value="0" /></td>
                             </tr>       
                             <tr>
                                 <th>Availability</th>
