@@ -4,8 +4,8 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL); 
 
 require_once './action/db_connect.php';
-
-$sql = "SELECT * FROM Library WHERE publisher_name = 'Paramount Pictures'";
+$pub = $_GET["publisher_name"];
+$sql = "SELECT * FROM Library WHERE publisher_name = '$pub'"; 
 $result = mysqli_query($connect, $sql);
 
 $tbody="";
