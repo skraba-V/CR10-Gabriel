@@ -36,9 +36,9 @@ if(mysqli_num_rows($result)>0){
                 <p class='dit'> 
                     ISBN/EAN: ".$row['isbnean']."
                 </p>
-                <p class='dit'>  <a class='eddt' href='publisher.php?publisher_name=".$row['publisher_name']."'>
+                <p class='dit'>  
                     Autor: ".$row['autor_first_name']."
-                     ".$row['autor_last_name']."</a>
+                     ".$row['autor_last_name']."
                 </p>
                 
                 <p class='dit'> 
@@ -46,8 +46,8 @@ if(mysqli_num_rows($result)>0){
                 </p>
             </div>
             <div class='col-4 nsl'>
-                <p class='dit'> 
-                    Publisher: ".$row['publisher_name']."
+                <p class='dit'> <a class='eddt' href='publisher.php?publisher_name=".$row['publisher_name']."'>
+                    Publisher: ".$row['publisher_name']."</a>
                 </p>
                 <p class='dit'> 
                     Country: ".$row['publisher_addres']."
