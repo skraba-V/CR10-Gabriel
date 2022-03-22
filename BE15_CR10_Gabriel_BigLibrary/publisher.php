@@ -15,16 +15,21 @@ if(mysqli_num_rows($result)>0){
         
         $tbody .= "
         
-        <div class='row text-center justify-content-center'>
-         
-            <div class='col-12 nsl'>
-                <h1 class='dit'>
-                
-                     ".$row['title']."
-                </h1>
+            <div class='container col-4 nsl2 justify-content-center'>
+              <div class='boox col-12 justify-content-center '>
+                <a href='details.php?library_id=".$row['library_id']."'>
+                  <img class='im-size' src='./pictures/" .$row['photo']."'>
+                </a> 
+              </div>
+              <div class='text-center nsl2'>
+                <a class='eddt' href='details.php?library_id=".$row['library_id']."'>
+                  <h4>" .$row['title']."</h4>
+                  <h4>" .$row['autor_first_name']."</h4>
+                </a>
+              </div>
             </div>
             
-        </div>
+            
         
         
         
@@ -60,12 +65,34 @@ if(mysqli_num_rows($result)>0){
 </head>
 <body class="bbc">
     
-  <?php require_once 'components/navigation.php' ?>
-      <div class="container">   
-        <?php  
-           echo $tbody;
-        ?>   
+    <?php require_once 'components/navigation.php' ?>
+
+    <div class="container">   
+    
+
+    <div id="items">
+
+      <div class="row text-center dit">
+      
+        
+        <div class="col-12 row justify-content-center">
+           <h1 class="text-center"><?php echo $pub; ?></h1>
+
+              <?php
+                echo $tbody; 
+
+              ?>
+
+        </div>
+
+
+
+
       </div>
+
+    </div>
+    </div>
+      
 
 
 
